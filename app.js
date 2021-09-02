@@ -11,7 +11,7 @@ const tableElement=document.querySelector(".table");
 const availableNotes = [2000,500,100,20,10,5,1];
 
 nextBtn.addEventListener("click", () => {
-    if(billTotal.value>0) {
+    if (billTotal.value>0) {
         hideMessage();
         cashContainer.style.display="flex";
         nextBtn.style.display="none";
