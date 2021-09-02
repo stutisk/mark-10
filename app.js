@@ -1,12 +1,12 @@
 const billTotal = document.querySelector("#bill-amount");
 const cashGiven = document.querySelector("#cash-given");
-var notesToReturn = document.querySelector("#no-of-notes");
+var notesToReturn = document.querySelector(".no-of-notes");
 const message=document.querySelector("#error-message");
-const nextBtn = document.querySelector(".nextBtn");
-const checkButton = document.querySelector("#check");
-const cashContainer= document.querySelector("cash-container ");
-const changeContainer= document.querySelector("change-container ")
-const tableElement=document.querySelector(".table");
+const nextBtn = document.querySelector("#nextBtn");
+const checkButton = document.querySelector("#check-btn");
+const cashContainer= document.querySelector("#cash-container");
+const changeContainer= document.querySelector("#change-container")
+
 
 const availableNotes = [2000,500,100,20,10,5,1];
 
