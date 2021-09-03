@@ -1,14 +1,14 @@
 const billTotal = document.querySelector("#bill-amount");
 const cashGiven = document.querySelector("#cash-given");
-var notesToReturn = document.querySelector(".no-of-notes");
+const notesToReturn = document.querySelectorAll(".no-of-notes");
 const message=document.querySelector("#error-message");
 const nextBtn = document.querySelector("#nextBtn");
 const checkButton = document.querySelector("#check-btn");
 const cashContainer= document.querySelector("#cash-container");
-const changeContainer= document.querySelector("#change-container")
+const changeContainer= document.querySelector("#change-container");
 
 
-const availableNotes = [2000,500,100,20,10,5,1];
+const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
 
 nextBtn.addEventListener("click", () => {
     if (billTotal.value>0) {
@@ -24,20 +24,21 @@ nextBtn.addEventListener("click", () => {
 });
 
 checkButton.addEventListener("click", () => {
-    changeContainer.style.display="none";
+    let bill = Number(billTotal.value);
+    let cash = Number(cashGiven.value);
+    changeContainer.style.display= "none";
 
   
-    if(billTotal.value>0 && cashGiven>billTotal){
+    if(bill>0 && cash>bill){
         hideMessage();
-            const sum = cashGiven.value - billTotal.value;
-            calculateChange(sum);
-            changeContainer.style.display="block"
+         calculateChange(cash - bill);
+         changeContainer.style.display= "block";
         }
-       else if (cashGiven<billTotal) {
+       else if (cash<bill) {
            showMessage("ahan intrested to wash plates :P");
 
        }
-       else if(cashGiven==billTotal) {
+       else if(cash==bill) {
             showMessage("no change to be retuned ")
        }
        }
@@ -46,10 +47,10 @@ checkButton.addEventListener("click", () => {
 
 function showMessage(msg){
     message.style.display="block";
-    message.innerText=msg;
+    message.innerText= msg;
 }
 function hideMessage(){
-    message.style.display="none";
+    message.style.display= "none";
     message.innerText="";
     };
 
@@ -58,7 +59,8 @@ const calculateChange = (bill) => {
       let notesRequired = Math.trunc(bill / availableNotes[i]);
       notesToReturn[i].innerText = notesRequired;
       bill = bill % availableNotes[i];
+     
 }
 
 
-}    
+};
