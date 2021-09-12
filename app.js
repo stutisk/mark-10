@@ -35,7 +35,7 @@ checkButton.addEventListener("click", () => {
          changeContainer.style.display= "block";
         }
        else if (cash<bill) {
-           showMessage("ahan intrested to wash plates :P");
+           showMessage(" cash provided less then the actual price, ahan! intrested to wash plates? :P");
 
        }
        else if(cash==bill) {
